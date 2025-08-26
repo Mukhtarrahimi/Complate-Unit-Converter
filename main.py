@@ -122,3 +122,22 @@ def main():
         if cat not in CATEGORIES:
             print("Invalid category.")
             continue
+         try:
+            if cat == "Temperature":
+                print("Units: C, F, K")
+                value = safe_float_input("Enter value: ")
+                from_u = input("From unit (C/F/K): ").strip().upper()
+                to_u = input("To unit (C/F/K): ").strip().upper()
+                result = convert_temperature(value, from_u, to_u)
+                print(f"Result: {value} {from_u} = {round(result, 6)} {to_u}")
+            else:
+                factors = CATEGORIES[cat]
+                value = safe_float_input("Enter value: ")
+                print(f"Available units: {list_units(factors)}")
+                from_u = input("From unit: ").strip()
+                to_u = input("To unit: ").strip()
+                if from_u not in factors or to_u not in factors:
+                    print("Invalid unit.")
+                    continue
+                result = convert_linear(value, from_u, to_u, factors)
+                print(f"Result: {value} {from_u} = {round(result, 6)} {to_u}")
