@@ -71,3 +71,15 @@ def convert_linear(value, from_unit, to_unit, factors):
 def convert_temperature(value, from_unit, to_unit):
     f = from_unit.upper()
     t = to_unit.upper()
+    if f == "C":
+        c = value
+    elif f == "F":
+        c = (value - 32) * 5.0 / 9.0
+    elif f == "K":
+        c = value - 273.15
+    if t == "C":
+        return c
+    elif t == "F":
+        return c * 9.0 / 5.0 + 32
+    elif t == "K":
+        return c + 273.15
