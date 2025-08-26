@@ -87,3 +87,10 @@ def convert_temperature(value, from_unit, to_unit):
 
 def list_units(factors):
     return ", ".join(sorted(factors.keys()))
+
+
+def get_category_choice():
+    print("\nCategories:")
+    for i, name in enumerate(CATEGORIES.keys(), 1):
+        print(f"{i}. {name}")
+    choice = input("Choose category number: ").strip()
