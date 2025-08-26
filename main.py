@@ -66,3 +66,8 @@ def convert_linear(value, from_unit, to_unit, factors):
     value_in_base = value * factors[from_unit]
     result = value_in_base / factors[to_unit]
     return result
+
+
+def convert_temperature(value, from_unit, to_unit):
+    f = from_unit.upper()
+    t = to_unit.upper()
