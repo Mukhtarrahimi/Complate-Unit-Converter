@@ -98,3 +98,7 @@ def get_category_choice():
         idx = int(choice) - 1
         if 0 <= idx < len(CATEGORIES):
             return list(CATEGORIES.keys())[idx]
+    except ValueError:
+        pass
+    print("Invalid choice.")
+    return None
