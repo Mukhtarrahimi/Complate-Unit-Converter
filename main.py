@@ -147,3 +147,6 @@ def main():
         if cont not in ("y", "yes"):
             print("Goodbye!")
             break
+        
+if __name__ == "__main__":
+    main()
