@@ -1,6 +1,6 @@
 import sys
 
-#    
+#
 LENGTH_FACTORS = {
     "m": 1.0,
     "km": 1000.0,
@@ -58,3 +58,11 @@ CATEGORIES = {
     "Area": AREA_FACTORS,
     "Temperature": None,
 }
+
+
+def convert_linear(value, from_unit, to_unit, factors):
+    if from_unit not in factors or to_unit not in factors:
+        raise ValueError("Invalid unit.")
+    value_in_base = value * factors[from_unit]
+    result = value_in_base / factors[to_unit]
+    return result
