@@ -1,5 +1,4 @@
 import sys
-
 #
 LENGTH_FACTORS = {
     "m": 1.0,
@@ -122,7 +121,7 @@ def main():
         if cat not in CATEGORIES:
             print("Invalid category.")
             continue
-         try:
+        try:
             if cat == "Temperature":
                 print("Units: C, F, K")
                 value = safe_float_input("Enter value: ")
