@@ -111,3 +111,14 @@ def safe_float_input(prompt):
         return float(s)
     except ValueError:
         raise ValueError("Invalid number.")
+
+
+def main():
+    print("Welcome to Unit Converter")
+    while True:
+        cat = None
+        while cat is None:
+            cat = get_category_choice()
+        if cat not in CATEGORIES:
+            print("Invalid category.")
+            continue
