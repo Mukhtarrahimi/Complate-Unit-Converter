@@ -102,3 +102,12 @@ def get_category_choice():
         pass
     print("Invalid choice.")
     return None
+
+
+def safe_float_input(prompt):
+    s = input(prompt).strip()
+    try:
+        s = s.replace(",", ".")
+        return float(s)
+    except ValueError:
+        raise ValueError("Invalid number.")
