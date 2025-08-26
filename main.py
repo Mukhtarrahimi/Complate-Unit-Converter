@@ -94,3 +94,7 @@ def get_category_choice():
     for i, name in enumerate(CATEGORIES.keys(), 1):
         print(f"{i}. {name}")
     choice = input("Choose category number: ").strip()
+    try:
+        idx = int(choice) - 1
+        if 0 <= idx < len(CATEGORIES):
+            return list(CATEGORIES.keys())[idx]
