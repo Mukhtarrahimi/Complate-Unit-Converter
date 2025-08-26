@@ -83,3 +83,7 @@ def convert_temperature(value, from_unit, to_unit):
         return c * 9.0 / 5.0 + 32
     elif t == "K":
         return c + 273.15
+
+
+def list_units(factors):
+    return ", ".join(sorted(factors.keys()))
