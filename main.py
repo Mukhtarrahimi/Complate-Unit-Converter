@@ -141,3 +141,9 @@ def main():
                     continue
                 result = convert_linear(value, from_u, to_u, factors)
                 print(f"Result: {value} {from_u} = {round(result, 6)} {to_u}")
+        except ValueError as e:
+            print("Error:", e)
+        cont = input("Do you want another conversion? (y/n): ").strip().lower()
+        if cont not in ("y", "yes"):
+            print("Goodbye!")
+            break
